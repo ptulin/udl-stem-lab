@@ -1,6 +1,8 @@
 ---
 deployment:
   tasks:
+    # Create directory if it doesn't exist
+    - /bin/mkdir -p /home1/moose/public_html/udl-stem-lab
     # Copy all static files from out/ directory to public_html
     - /bin/cp -rf out/* /home1/moose/public_html/udl-stem-lab/
     # Set correct permissions
