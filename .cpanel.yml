@@ -1,0 +1,8 @@
+---
+deployment:
+  tasks:
+    # Copy all static files from out/ directory to public_html
+    - /bin/cp -rf out/* /home1/moose/public_html/udl-stem-lab/
+    # Set correct permissions
+    - find /home1/moose/public_html/udl-stem-lab -type f -exec chmod 644 {} \;
+    - find /home1/moose/public_html/udl-stem-lab -type d -exec chmod 755 {} \;

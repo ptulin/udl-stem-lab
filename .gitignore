@@ -10,7 +10,8 @@
 
 # next.js
 /.next/
-/out/
+# Keep out/ for deployment (but ignore build artifacts)
+/out/.next/
 
 # production
 /build
