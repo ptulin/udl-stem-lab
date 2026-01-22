@@ -1,0 +1,545 @@
+{
+  "modules": [
+    {
+      "id": "circuits-intro",
+      "title": "Intro to Electric Circuits (Series vs Parallel)",
+      "description": "Learn to distinguish series and parallel circuits by current/voltage behavior, predict component failures, and build circuits to meet goals.",
+      "estimatedTime": "45-60 minutes",
+      "objectives": [
+        {
+          "id": "obj1",
+          "text": "Distinguish series vs parallel circuits by current/voltage behavior"
+        },
+        {
+          "id": "obj2",
+          "text": "Predict what happens when a component fails in each circuit"
+        },
+        {
+          "id": "obj3",
+          "text": "Build a circuit configuration to meet a goal (e.g., keep one light on if another fails)"
+        }
+      ],
+      "assessment": {
+        "type": "Performance-based with knowledge checks",
+        "description": "You'll be assessed through interactive circuit building, knowledge checks, and a final challenge."
+      },
+      "steps": [
+        {
+          "id": "step1",
+          "title": "Welcome to Circuits",
+          "instructions": "In this lab, you'll explore how electricity flows through different circuit configurations. Let's start by understanding the basic components.",
+          "simExpectedState": null,
+          "commonMistakes": [],
+          "hints": [
+            {
+              "level": 1,
+              "text": "This is an introduction step. Read through the instructions carefully."
+            },
+            {
+              "level": 2,
+              "text": "Take your time to understand what you'll be learning in this lab."
+            },
+            {
+              "level": 3,
+              "text": "If you need help, use the glossary or simplified language toggle in your settings."
+            }
+          ],
+          "explainers": [
+            {
+              "topic": "circuits",
+              "text": "A circuit is a closed path that allows electric current to flow. It needs a power source (like a battery) and a complete loop for current to travel."
+            }
+          ],
+          "vocabulary": [
+            {
+              "term": "Circuit",
+              "definition": "A closed path that allows electric current to flow",
+              "symbol": "⚡"
+            },
+            {
+              "term": "Battery",
+              "definition": "A power source that provides voltage to push current through a circuit",
+              "symbol": "🔋"
+            }
+          ],
+          "audioScript": "Welcome to the Electric Circuits lab. In this lab, you'll explore how electricity flows through different circuit configurations. Let's start by understanding the basic components."
+        },
+        {
+          "id": "step2",
+          "title": "Meet the Components",
+          "instructions": "Drag a battery and a bulb onto the canvas. Connect them with wires to create a simple circuit. What happens when you close the circuit?",
+          "simExpectedState": {
+            "components": ["battery", "bulb"],
+            "topology": "simple",
+            "closed": true
+          },
+          "commonMistakes": [
+            {
+              "type": "open_circuit",
+              "detection": "circuit not closed",
+              "message": "Your circuit needs to be closed (complete loop) for current to flow. Make sure all components are connected in a loop."
+            },
+            {
+              "type": "no_battery",
+              "detection": "no power source",
+              "message": "Every circuit needs a power source. Add a battery to provide voltage."
+            }
+          ],
+          "hints": [
+            {
+              "level": 1,
+              "text": "Start by placing a battery on the canvas. Then add a bulb."
+            },
+            {
+              "level": 2,
+              "text": "Connect the positive terminal of the battery to one side of the bulb, and the negative terminal to the other side."
+            },
+            {
+              "level": 3,
+              "text": "Make sure the circuit forms a complete loop. Current flows from the battery, through the bulb, and back to the battery."
+            }
+          ],
+          "explainers": [
+            {
+              "topic": "current flow",
+              "text": "Electric current flows from the positive terminal of the battery, through the circuit components, and back to the negative terminal. This creates a complete loop."
+            }
+          ],
+          "vocabulary": [
+            {
+              "term": "Current",
+              "definition": "The flow of electric charge through a circuit, measured in amperes (A)",
+              "symbol": "I"
+            },
+            {
+              "term": "Voltage",
+              "definition": "The electrical pressure that pushes current through a circuit, measured in volts (V)",
+              "symbol": "V"
+            }
+          ],
+          "audioScript": "Meet the components. Drag a battery and a bulb onto the canvas. Connect them with wires to create a simple circuit. What happens when you close the circuit?"
+        },
+        {
+          "id": "step3",
+          "title": "Series Circuit Basics",
+          "instructions": "Build a series circuit with a battery and two bulbs. In a series circuit, components are connected one after another in a single path. What do you notice about the brightness of the bulbs?",
+          "simExpectedState": {
+            "components": ["battery", "bulb", "bulb"],
+            "topology": "series",
+            "closed": true
+          },
+          "commonMistakes": [
+            {
+              "type": "wrong_topology",
+              "detection": "not series",
+              "message": "In a series circuit, current flows through one component, then the next, in a single path. Make sure both bulbs are in the same path."
+            }
+          ],
+          "hints": [
+            {
+              "level": 1,
+              "text": "Place a battery, then two bulbs. Connect them so current flows through one bulb, then the other."
+            },
+            {
+              "level": 2,
+              "text": "In series, the bulbs share the same current path. Connect: battery → bulb 1 → bulb 2 → back to battery."
+            },
+            {
+              "level": 3,
+              "text": "In a series circuit, if you trace the path from the battery, you should go through both bulbs before returning to the battery."
+            }
+          ],
+          "explainers": [
+            {
+              "topic": "series circuits",
+              "text": "In a series circuit, components are connected end-to-end in a single path. The same current flows through all components. If one component fails (opens), the entire circuit stops working."
+            }
+          ],
+          "vocabulary": [
+            {
+              "term": "Series Circuit",
+              "definition": "A circuit where components are connected one after another in a single path",
+              "symbol": "→→"
+            }
+          ],
+          "audioScript": "Build a series circuit with a battery and two bulbs. In a series circuit, components are connected one after another in a single path. What do you notice about the brightness of the bulbs?"
+        },
+        {
+          "id": "step4",
+          "title": "Parallel Circuit Basics",
+          "instructions": "Now build a parallel circuit with a battery and two bulbs. In a parallel circuit, components are connected side-by-side, creating multiple paths. Compare the brightness to the series circuit.",
+          "simExpectedState": {
+            "components": ["battery", "bulb", "bulb"],
+            "topology": "parallel",
+            "closed": true
+          },
+          "commonMistakes": [
+            {
+              "type": "wrong_topology",
+              "detection": "not parallel",
+              "message": "In a parallel circuit, each bulb should have its own path from the battery. The bulbs should be side-by-side, not one after another."
+            }
+          ],
+          "hints": [
+            {
+              "level": 1,
+              "text": "Place a battery and two bulbs. Connect each bulb directly to the battery terminals."
+            },
+            {
+              "level": 2,
+              "text": "In parallel, each bulb has its own path. Connect: battery positive → both bulbs → battery negative (each bulb gets its own wire path)."
+            },
+            {
+              "level": 3,
+              "text": "In a parallel circuit, you should be able to trace two separate paths from the battery: one through each bulb."
+            }
+          ],
+          "explainers": [
+            {
+              "topic": "parallel circuits",
+              "text": "In a parallel circuit, components are connected side-by-side, creating multiple paths for current. Each component gets the full voltage. If one component fails, the others continue working."
+            }
+          ],
+          "vocabulary": [
+            {
+              "term": "Parallel Circuit",
+              "definition": "A circuit where components are connected side-by-side, creating multiple paths for current",
+              "symbol": "||"
+            }
+          ],
+          "audioScript": "Now build a parallel circuit with a battery and two bulbs. In a parallel circuit, components are connected side-by-side, creating multiple paths. Compare the brightness to the parallel circuit."
+        },
+        {
+          "id": "step5",
+          "title": "Current in Series vs Parallel",
+          "instructions": "Compare the current flow in your series and parallel circuits. In series, the same current flows through both bulbs. In parallel, current splits between the paths. Use the simulation to observe this.",
+          "simExpectedState": {
+            "components": ["battery", "bulb", "bulb"],
+            "topology": "either",
+            "closed": true
+          },
+          "commonMistakes": [
+            {
+              "type": "misconception_current_used_up",
+              "detection": "user thinks current decreases",
+              "message": "Current doesn't get 'used up' in a circuit. In series, the same current flows through all components. In parallel, current splits but the total current from the battery equals the sum of currents through each path."
+            }
+          ],
+          "hints": [
+            {
+              "level": 1,
+              "text": "Build both a series and parallel circuit. Observe how current flows differently in each."
+            },
+            {
+              "level": 2,
+              "text": "In series: current is the same everywhere. In parallel: current splits, but total current from battery equals sum of branch currents."
+            },
+            {
+              "level": 3,
+              "text": "Remember: current is conserved. It doesn't disappear. In series, it's the same through all components. In parallel, it divides but the total remains constant."
+            }
+          ],
+          "explainers": [
+            {
+              "topic": "current behavior",
+              "text": "Current is conserved in circuits. In series, the same current flows through all components because there's only one path. In parallel, current splits between branches, but the total current from the battery equals the sum of currents in each branch."
+            }
+          ],
+          "vocabulary": [],
+          "audioScript": "Compare the current flow in your series and parallel circuits. In series, the same current flows through both bulbs. In parallel, current splits between the paths."
+        },
+        {
+          "id": "step6",
+          "title": "Component Failure: Series",
+          "instructions": "In your series circuit, simulate what happens when one bulb fails (opens). What happens to the other bulb? Why?",
+          "simExpectedState": {
+            "components": ["battery", "bulb", "bulb", "switch"],
+            "topology": "series",
+            "closed": false,
+            "scenario": "one_bulb_fails"
+          },
+          "commonMistakes": [
+            {
+              "type": "misconception_voltage_same",
+              "detection": "user expects other bulb to work",
+              "message": "In a series circuit, if one component fails (opens), the entire circuit breaks. There's no complete path for current, so all components stop working."
+            }
+          ],
+          "hints": [
+            {
+              "level": 1,
+              "text": "Open one bulb in your series circuit (use a switch or disconnect it). Observe what happens."
+            },
+            {
+              "level": 2,
+              "text": "In series, all components share one path. If that path is broken anywhere, current can't flow anywhere."
+            },
+            {
+              "level": 3,
+              "text": "Think of series like a chain. If one link breaks, the whole chain fails. Same with series circuits."
+            }
+          ],
+          "explainers": [
+            {
+              "topic": "series failure",
+              "text": "In a series circuit, all components are in one path. If any component fails (opens), the path is broken and no current can flow. This is why old Christmas lights (series) all go out when one bulb fails."
+            }
+          ],
+          "vocabulary": [],
+          "audioScript": "In your series circuit, simulate what happens when one bulb fails. What happens to the other bulb? Why?"
+        },
+        {
+          "id": "step7",
+          "title": "Component Failure: Parallel",
+          "instructions": "Now in your parallel circuit, simulate what happens when one bulb fails. What happens to the other bulb? How is this different from series?",
+          "simExpectedState": {
+            "components": ["battery", "bulb", "bulb", "switch"],
+            "topology": "parallel",
+            "closed": false,
+            "scenario": "one_bulb_fails"
+          },
+          "commonMistakes": [],
+          "hints": [
+            {
+              "level": 1,
+              "text": "Open one bulb in your parallel circuit. Observe what happens to the other bulb."
+            },
+            {
+              "level": 2,
+              "text": "In parallel, each bulb has its own path. If one path breaks, the other path still works."
+            },
+            {
+              "level": 3,
+              "text": "This is why modern home wiring uses parallel circuits - if one light goes out, others keep working."
+            }
+          ],
+          "explainers": [
+            {
+              "topic": "parallel failure",
+              "text": "In a parallel circuit, each component has its own path. If one component fails, only that path breaks. The other paths remain intact, so other components continue working. This is why homes use parallel wiring."
+            }
+          ],
+          "vocabulary": [],
+          "audioScript": "Now in your parallel circuit, simulate what happens when one bulb fails. What happens to the other bulb? How is this different from series?"
+        },
+        {
+          "id": "step8",
+          "title": "Challenge: Design a Circuit",
+          "instructions": "Design a circuit where if one bulb fails, the other bulb stays on. What type of circuit do you need? Build it and test it.",
+          "simExpectedState": {
+            "components": ["battery", "bulb", "bulb"],
+            "topology": "parallel",
+            "closed": true,
+            "scenario": "redundancy_challenge"
+          },
+          "commonMistakes": [
+            {
+              "type": "wrong_topology",
+              "detection": "not parallel",
+              "message": "To keep one bulb working when another fails, you need a parallel circuit. Each bulb needs its own path from the battery."
+            }
+          ],
+          "hints": [
+            {
+              "level": 1,
+              "text": "Think about which circuit type allows one component to work even if another fails."
+            },
+            {
+              "level": 2,
+              "text": "You need parallel topology. Each bulb should have its own path from the battery."
+            },
+            {
+              "level": 3,
+              "text": "In parallel, failure of one component doesn't affect others. Build a parallel circuit with two bulbs."
+            }
+          ],
+          "explainers": [
+            {
+              "topic": "redundancy",
+              "text": "Parallel circuits provide redundancy. If one component fails, others continue working because they have independent paths. This is used in critical systems like emergency lighting."
+            }
+          ],
+          "vocabulary": [],
+          "audioScript": "Design a circuit where if one bulb fails, the other bulb stays on. What type of circuit do you need? Build it and test it."
+        }
+      ],
+      "knowledgeChecks": [
+        {
+          "id": "kc1",
+          "stepAfter": 3,
+          "questions": [
+            {
+              "id": "q1",
+              "question": "In a series circuit with two bulbs, what happens to the current as it flows through the circuit?",
+              "options": [
+                "Current gets used up and decreases",
+                "Current stays the same through both bulbs",
+                "Current increases after passing through the first bulb",
+                "Current only flows through one bulb at a time"
+              ],
+              "correctAnswer": 1,
+              "remediation": "In a series circuit, the same current flows through all components because there's only one path. Current doesn't get 'used up' - it's conserved."
+            },
+            {
+              "id": "q2",
+              "question": "What is a key characteristic of a series circuit?",
+              "options": [
+                "Components are side-by-side",
+                "Components share the same current path",
+                "Each component has its own path",
+                "Current splits between components"
+              ],
+              "correctAnswer": 1,
+              "remediation": "In a series circuit, all components are connected one after another in a single path, so they share the same current."
+            }
+          ]
+        },
+        {
+          "id": "kc2",
+          "stepAfter": 6,
+          "questions": [
+            {
+              "id": "q3",
+              "question": "If one bulb fails (opens) in a series circuit, what happens to the other bulb?",
+              "options": [
+                "It gets brighter",
+                "It stays on",
+                "It also goes out",
+                "It flickers"
+              ],
+              "correctAnswer": 2,
+              "remediation": "In a series circuit, if one component fails, the entire path is broken. No current can flow, so all components stop working."
+            },
+            {
+              "id": "q4",
+              "question": "If one bulb fails in a parallel circuit, what happens to the other bulb?",
+              "options": [
+                "It also goes out",
+                "It stays on",
+                "It gets dimmer",
+                "It flickers"
+              ],
+              "correctAnswer": 1,
+              "remediation": "In a parallel circuit, each bulb has its own path. If one fails, only that path breaks. The other paths remain intact."
+            },
+            {
+              "id": "q5",
+              "question": "Which circuit type would you use if you want one light to stay on even if another fails?",
+              "options": [
+                "Series circuit",
+                "Parallel circuit",
+                "Either would work",
+                "Neither would work"
+              ],
+              "correctAnswer": 1,
+              "remediation": "Parallel circuits provide redundancy. Each component has an independent path, so failure of one doesn't affect others."
+            }
+          ]
+        }
+      ],
+      "rubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "name": "Objective 1: Distinguish series vs parallel",
+            "levels": [
+              {
+                "level": "Mastery",
+                "description": "Consistently identifies series and parallel circuits and explains current/voltage behavior differences"
+              },
+              {
+                "level": "Proficient",
+                "description": "Correctly identifies circuit types most of the time with minor errors in explanation"
+              },
+              {
+                "level": "Developing",
+                "description": "Can identify circuit types but struggles to explain behavior differences"
+              },
+              {
+                "level": "Beginning",
+                "description": "Cannot reliably distinguish between series and parallel circuits"
+              }
+            ]
+          },
+          {
+            "id": "c2",
+            "name": "Objective 2: Predict component failure",
+            "levels": [
+              {
+                "level": "Mastery",
+                "description": "Accurately predicts failure behavior in both circuit types and explains why"
+              },
+              {
+                "level": "Proficient",
+                "description": "Correctly predicts failure behavior with minor gaps in explanation"
+              },
+              {
+                "level": "Developing",
+                "description": "Can predict failure in one circuit type but not both"
+              },
+              {
+                "level": "Beginning",
+                "description": "Cannot predict failure behavior or makes incorrect predictions"
+              }
+            ]
+          },
+          {
+            "id": "c3",
+            "name": "Objective 3: Build circuits to meet goals",
+            "levels": [
+              {
+                "level": "Mastery",
+                "description": "Successfully designs and builds circuits to meet specified goals"
+              },
+              {
+                "level": "Proficient",
+                "description": "Builds correct circuits with minimal guidance"
+              },
+              {
+                "level": "Developing",
+                "description": "Requires guidance to build circuits that meet goals"
+              },
+              {
+                "level": "Beginning",
+                "description": "Cannot build circuits that meet specified goals"
+              }
+            ]
+          }
+        ]
+      },
+      "misconceptions": [
+        {
+          "id": "m1",
+          "misconception": "Current gets used up as it flows through a circuit",
+          "detectionSignals": [
+            "user says current decreases",
+            "user thinks current is consumed",
+            "user answers that current gets used up in knowledge check"
+          ],
+          "explanation": "Current doesn't get 'used up' in a circuit. It's conserved - the same amount of current that leaves the battery returns to it. In series, the same current flows through all components. In parallel, current splits but the total is conserved.",
+          "correctiveActivity": "Build a series circuit and observe that current is the same at all points. Then build a parallel circuit and see that total current from battery equals sum of branch currents."
+        },
+        {
+          "id": "m2",
+          "misconception": "Voltage is the same everywhere in a circuit",
+          "detectionSignals": [
+            "user expects same voltage across all components",
+            "user doesn't understand voltage division in series"
+          ],
+          "explanation": "Voltage is divided in series circuits (components share the voltage). In parallel circuits, each component gets the full voltage from the battery.",
+          "correctiveActivity": "Compare voltage across components in series vs parallel. In series, voltage divides. In parallel, each component gets full battery voltage."
+        },
+        {
+          "id": "m3",
+          "misconception": "Parallel always means brighter",
+          "detectionSignals": [
+            "user assumes parallel = brighter without context",
+            "user doesn't consider component count or battery capacity"
+          ],
+          "explanation": "Parallel circuits can be brighter per bulb because each gets full voltage, but this depends on the battery capacity and number of components. More components in parallel draw more total current.",
+          "correctiveActivity": "Compare brightness in series vs parallel with same components. Discuss how voltage and current affect brightness."
+        }
+      ]
+    }
+  ]
+}
